@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inconsolata:wght@200..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sofadi+One&family=Space+Grotesk:wght@300..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inconsolata", serif;
+  background-image: url(./images/background-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+  max-width: 100%;
+  height: 100vh;
+}
+
+:root {
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+  --Gradient-text: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+}
+
+.pattern-lines {
+  position: absolute;
+  z-index: -1;
+  top: -2rem;
+}
+
+.pattern-circle-1 {
+  z-index: -1;
+  position: absolute;
+  left: 3rem;
+}
+
+.pattern-circle-2 {
+  z-index: -1;
+  position: absolute;
+  right: 3rem;
+  top: 22rem;
+}
+
+.pattern-squiggly {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 3rem;
+}
+
+.pattern-squiggly-bottom {
+  z-index: -1;
+  position: absolute;
+  bottom: -6rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.7rem;
+}
+
+main {
+  width: 100%;
+  max-width: 50rem;
+  margin: 1rem auto;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  color: var(--Neutral-0);
+  text-align: center;
+}
+
+.hero-section p {
+  color: var(--Neutral-0);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.form-container {
+  margin: 0 auto;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 40rem;
+  padding: 20px;
+  margin: 1rem auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.drop-area {
+  border: 1px dashed var(--Neutral-300);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--Neutral-700);
+  height: 10rem;
+}
+
+.drop-area.dragging {
+  background-color: var(--Neutral-500);
+}
+
+.drop-message {
+  color: var(--Neutral-0);
+}
+
+.upload-size {
+  font-size: 12px;
+  display: flex;
+  gap: 0.2rem;
+  color: var(--Neutral-0);
+}
+
+.form-group {
+  margin: 1rem 0;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: var(--Neutral-0);
+}
+
+.file-input-container {
+  position: relative;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+  background: var(--Neutral-300);
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: var(--Neutral-700);
+}
+
+.input:focus {
+  border: 2px double var(--Neutral-300);
+}
+
+.hidden {
+  display: none;
+}
+.error {
+  color: #d9534f;
+  font-size: 12px;
+  display: none;
+}
+
+.submit-btn {
+  padding: 10px 15px;
+  background: var(--Orange-500);
+  color: var(--Neutral-900);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.submit-btn:hover {
+  background: var(--Orange-700);
+}
+
+#image-preview {
+  max-width: 5rem;
+  border-radius: 20%;
+  cursor: pointer;
+  height: 5rem;
+}
+
+.remove-btn,
+.change-btn {
+  padding: 5px 10px;
+  background: var(--Neutral-700);
+  color: var(--Neutral-500);
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+.remove-btn:hover,
+.change-btn:hover {
+  background: var(--Neutral-500);
+  color: var(--Neutral-900);
+}
+
+.footer-section {
+  font-size: 14px;
+  text-align: center;
+  color: var(--Neutral-0);
+  margin-top: 2rem;
+}
+
+.footer-section a {
+  color: hsl(228, 45%, 44%);
+}
+
+.ticket-container {
+  width: 40%;
+  margin: 4rem auto;
+}
+
+.ticket-container h1 {
+  color: var(--Neutral-0);
+  text-align: center;
+  margin: 1rem;
+  font-size: xx-large;
+  font-weight: 800;
+}
+
+.ticket-container p {
+  color: var(--Neutral-0);
+  text-align: center;
+  font-weight: bold;
+}
+
+.ticket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  width: 100%;
+  position: relative;
+}
+
+.pattern-ticket {
+  display: block;
+  width: 100%;
+}
+
+.ticket-content {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  text-align: center;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-content .logo-info {
+  margin-top: 0.5rem;
+}
+
+.logo-info img {
+  width: 65%; /* Adjust size */
+  margin-bottom: 0.5rem;
+}
+
+.event-date {
+  color: var(--Neutral-300);
+  font-size: 1.25rem;
+}
+
+.uploaded-info {
+  display: flex;
+  align-items: center; /* Vertically aligns items */
+  gap: 1rem; /* Space between items */
+  margin-top: 1rem;
+  justify-content: center; /* Center content horizontally */
+}
+
+.uploaded-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+/* GitHub info styling */
+.github-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between GitHub icon and username */
+  font-size: 1rem;
+  color: var(--Neutral-0);
+}
+
+.github-info img {
+  width: 24px; /* GitHub logo size */
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Uploaded name styling */
+.gen-name {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--Neutral-0);
+  margin-bottom: 0.5rem;
+}
+
+/* Optional: Ensure the user container does not overflow */
+.user-container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%; /* Prevent overflow */
+  padding: 1rem;
+}
+
+/* Mobile: 320px - 767px */
+@media (max-width: 767px) {
+  body {
+    background-image: url("./images/background-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  .uploaded-info {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .user-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 90%; /* Prevent overflow */
+    border: 2px solid palegoldenrod;
+    margin: 0 auto;
+  }
+
+  .ticket-container {
+    width: 100%; /* Adjust width */
+  }
+
+  .drop-area {
+    width: 100%;
+  }
+
+  .uploaded-image img {
+    width: 3rem; /* Slightly smaller image on mobile */
+    height: 3rem;
+    border-radius: 10%;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem;
+    margin: 1rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+    margin: 0.8rem 1rem;
+  }
+
+  .form-wrapper {
+    padding: 1rem;
+  }
+
+  .ticket-container h1,
+  .ticket-container p {
+    font-size: 1rem;
+    max-width: 100%;
+    margin: 0.8rem auto;
+  }
+
+  .pattern-ticket {
+    width: 100%;
+    height: 80vh;
+  }
+  .ticket-content {
+    width: 100%;
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .footer-section {
+    margin-top: 4rem;
+  }
+
+  .pattern-squiggly,
+  .pattern-squiggly-bottom,
+  .pattern-circle-2,
+  .pattern-circle-1,
+  .pattern-lines {
+    display: none;
+  }
+}
+
+/* Tablet: 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-image: url("./images/background-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  }
+
+  .pattern-squiggly,
+  .pattern-squiggly-bottom {
+    display: none;
+  }
+
+  main {
+    margin: 1.5rem auto;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    margin: 1rem 2rem;
+  }
+
+  .form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .drop-area {
+    height: 7rem;
+  }
+
+  .footer-section {
+    margin-top: 4rem;
+  }
+
+  .ticket-container {
+    width: 70%; /* Adjust ticket container width */
+  }
+
+  .drop-area {
+    height: 8rem; /* Slightly larger drop area */
+  }
+  .hero-section h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-section p {
+    font-size: 1.5rem;
+  }
+  .uploaded-info {
+    flex-wrap: wrap; /* Ensure wrapping for smaller tablet widths */
+    gap: 0.8rem;
+  }
+
+  @media (min-width: 1025px) {
+    .ticket-container {
+      width: 50%;
+      margin: 3rem auto;
+    }
+
+    .hero-section h1 {
+      font-size: 4rem;
+    }
+
+    .hero-section p {
+      font-size: 1.8rem;
+      margin: 1.5rem auto;
+    }
+
+    .uploaded-image img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}

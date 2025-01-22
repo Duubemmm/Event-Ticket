@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Ticket Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="pattern-lines">
+      <img src="./images/pattern-lines.svg" aria-hidden="true" width="1000px" />
+    </div>
+    <div class="pattern-circle-1">
+      <img src="./images/pattern-circle.svg" aria-hidden="true" width="300px" />
+    </div>
+    <div class="pattern-circle-2">
+      <img src="./images/pattern-circle.svg" aria-hidden="true" width="300px" />
+    </div>
+    <div class="pattern-squiggly">
+      <img
+        src="./images/pattern-squiggly-line-top.svg"
+        aria-hidden="true"
+        width="500px"
+      />
+    </div>
+    <header>
+      <img src="./images/logo-full.svg" />
+    </header>
+    <main>
+      <div class="hero-section">
+        <h1>Your Journey to Coding Conf<br />2025 Starts Here!</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+      </div>
+      <div class="form-container">
+        <div class="form-wrapper">
+          <form action="#" class="form">
+            <label for="upload-area" class="upload-label">Upload Avatar</label>
+            <div class="drop-area" id="upload-area">
+              <div class="file-input-container">
+                <input
+                  type="file"
+                  id="file-input"
+                  class="file-input"
+                  accept="image/*"
+                  max="500KB"
+                />
+                <label for="file-input" class="file-label">
+                  <img
+                    src="./images/icon-upload.svg"
+                    alt="Upload Icon"
+                    class="upload-icon"
+                  />
+                </label>
+                <p class="drop-message">
+                  Drag and drop an image, or click to upload.
+                </p>
+              </div>
+
+              <img id="image-preview" alt="Uploaded Preview" class="hidden" />
+              <div class="actions hidden" id="image-actions">
+                <button type="button" id="change-btn" class="change-btn">
+                  Change Image
+                </button>
+                <button type="button" id="remove-btn" class="remove-btn">
+                  Remove Image
+                </button>
+              </div>
+            </div>
+            <div class="upload-size">
+              <img src="./images/icon-info.svg" aria-hidden="true" />
+              <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+            </div>
+            <div class="form-group">
+              <label for="full-name">Full Name:</label>
+              <input id="full-name" type="text" class="input" required />
+              <span class="error">Name is required.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input
+                id="email"
+                type="email"
+                class="input"
+                placeholder="example@email.com"
+                required
+              />
+              <span class="error">Valid email is required.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="github">GitHub Username:</label>
+              <input
+                id="github"
+                type="text"
+                class="input"
+                placeholder="@yourGitHubusername"
+                required
+              />
+              <span class="error">GitHub username is required.</span>
+            </div>
+
+            <button id="submit-btn" type="button" class="submit-btn">
+              Generate My Ticket
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <div class="pattern-squiggly-bottom">
+      <img
+        src="./images/pattern-squiggly-line-bottom.svg"
+        aria-hidden="true"
+        width="500px"
+      />
+    </div>
+
+    <section class="ticket-container hidden" id="ticket-section">
+      <h1>
+        Congratulations,
+        <span
+          id="name-display"
+          style="
+            color: var(--Orange-700);
+            background-image: linear-gradient(
+              hsl(7, 86%, 67%),
+              hsl(0, 0%, 100%)
+            );
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          "
+        >
+        </span>
+        ! Your ticket is ready.
+      </h1>
+      <p>
+        We've emailed your ticket to
+        <span id="email-display" style="color: var(--Orange-700)"></span> and
+        will send updates in the run-up to the event.
+      </p>
+
+      <div class="ticket">
+        <!-- Pattern Ticket Container -->
+        <img
+          src="./images/pattern-ticket.svg"
+          height="50%"
+          aria-hidden="true"
+          class="pattern-ticket"
+        />
+
+        <div class="ticket-content">
+          <!-- Logo -->
+          <div class="logo-info">
+            <img src="./images/logo-full.svg" alt="Event Logo" />
+          </div>
+
+          <!-- Event Date -->
+          <span class="event-date">Jan 31, 2025 / Austin, TX</span>
+
+          <!-- Uploaded Image and User Info -->
+          <div class="user-container">
+            <p class="gen-name" id="name-display"></p>
+            <!-- Uploaded name -->
+            <div class="uploaded-info">
+              <div class="uploaded-image">
+                <img id="ticket-image" alt="Uploaded Avatar" />
+              </div>
+              <div class="github-info">
+                <img src="./images/icon-github.svg" alt="GitHub Icon" />
+                <span class="gen-github" id="github-display"
+                  >GitHub Username</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/Duubemmm">Chidubem Okoli</a>.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
