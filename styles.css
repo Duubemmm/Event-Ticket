@@ -247,11 +247,11 @@ label {
 }
 
 .ticket {
-  /* display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0.5rem;
-  width: 100%; */
+  width: 100%;
   position: relative;
 }
 
@@ -262,28 +262,26 @@ label {
 
 .ticket-content {
   position: absolute;
-  left: 1rem; /*was 0 changed to 1rem*/
+  left: 0;
   top: 1rem;
-  /* text-align: center;
+  text-align: center;
   width: 70%;
   display: flex;
-  flex-direction: column; */
+  flex-direction: column;
 }
 
-/* .ticket-content .logo-info {
+.ticket-content .logo-info {
   margin-top: 0.5rem;
-} */
+}
 
-/* .logo-info img { */
-  /*width: 65%;  Adjust size */
-  /* margin-bottom: 0.5rem; }*/
-
+.logo-info img {
+  width: 65%; /* Adjust size */
+  margin-bottom: 0.5rem;
+}
 
 .event-date {
   color: var(--Neutral-300);
-  font-size: 0.85rem;/*1.25rem*/
-  margin-top:1rem; /*Was blank*/
-  margin-left: 3rem; /*Was blank*/
+  font-size: 1.25rem;
 }
 
 .uploaded-info {
@@ -305,20 +303,17 @@ label {
 .github-info {
   display: flex;
   align-items: center;
-  /* gap: 0.5rem; Space between GitHub icon and username */
-  /* font-size: 1rem;
-  color: var(--Neutral-0); */
+  gap: 0.5rem; /* Space between GitHub icon and username */
+  font-size: 1rem;
+  color: var(--Neutral-0);
 }
 
 .github-info img {
-  width: 2rem; /* Ws 24px */
-  margin: 0 -2.7rem -1rem 0.3rem;
-  /* height: 24px; */
-  /* object-fit: contain; */
+  width: 24px; /* GitHub logo size */
+  height: 24px;
+  object-fit: contain;
 }
 
-
-.github-info 
 /* Uploaded name styling */
 .gen-name {
   text-align: center;
@@ -330,35 +325,12 @@ label {
 
 /* Optional: Ensure the user container does not overflow */
 .user-container {
-  display: flex;
-  height: 5rem;
-  align-items: center;
-  position: relative;
-  margin-top: 2rem;
-  /* text-align: center; */
-  /* margin: 0 auto; */
-  /* max-width: 100%; Prevent overflow */
-  /* padding: 1rem; */
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%; /* Prevent overflow */
+  padding: 1rem;
 }
 
-.user-container .uploaded-info{
-  position: absolute;
-  top: 0.5rem;
-  left: 4rem;
-  width:100%;
-}
-
-.user-container .uploaded-info .uploaded-image{
-  margin-bottom: -1rem;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-left: -0.6rem;
-}
-
-.user-container.gen-name{
-  width: 4rem;
-  border-radius: 0.5rem;
-}
 /* Mobile: 320px - 767px */
 @media (max-width: 767px) {
   body {
@@ -368,35 +340,35 @@ label {
     height: 100vh;
   }
 
-  /* .uploaded-info {
+  .uploaded-info {
     display: inline-flex;
     margin: 0;
     padding: 0;
-  } */
+  }
 
-  /* .user-container {
+  .user-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 90%; /* Prevent overflow */
-    /* margin: 0 auto; 
-  } */
+    margin: 0 auto;
+  }
 
-  /* .ticket-container {
-    width: 100%;} /* Adjust width */
-   
+  .ticket-container {
+    width: 100%; /* Adjust width */
+  }
 
-  /* .drop-area {
+  .drop-area {
     width: 100%;
-  } */
+  }
 
-  /* .uploaded-image img {
-    width: 3rem; Slightly smaller image on mobile */
-    /* height: 3rem;
-    border-radius: 10%;} */
-  
+  .uploaded-image img {
+    width: 3rem; /* Slightly smaller image on mobile */
+    height: 3rem;
+    border-radius: 10%;
+  }
 
-  /* .hero-section h1 {
+  .hero-section h1 {
     font-size: 1.8rem;
     margin: 1rem;
   }
@@ -404,9 +376,9 @@ label {
   .hero-section p {
     font-size: 1rem;
     margin: 0.8rem 1rem;
-  } */
+  }
 
-  /* .form-wrapper {
+  .form-wrapper {
     padding: 1rem;
   }
 
@@ -415,21 +387,21 @@ label {
     font-size: 1rem;
     max-width: 100%;
     margin: 0.8rem auto;
-  } */
+  }
 
-  /* .pattern-ticket {
+  .pattern-ticket {
     width: 100%;
     height: 80vh;
-  } */
-  /* .ticket-content {
+  }
+  .ticket-content {
     width: 100%;
     max-width: 90%;
     margin: auto;
-  } */
+  }
 
-  /* .footer-section {
+  .footer-section {
     margin-top: 4rem;
-  } */
+  }
 
   .pattern-squiggly,
   .pattern-squiggly-bottom,
